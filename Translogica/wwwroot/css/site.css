@@ -34,3 +34,20 @@ body {
 .hover-image-wrapper:hover .base-image {
     opacity: 0;
 }
+
+
+/* Carousel-Pfeile besser sichtbar und positioniert */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #1f2e5a; /* deine Markenfarbe */
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* Größe der Punkte unter dem Carousel */
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #1f2e5a;
+}
