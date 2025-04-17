@@ -18,6 +18,16 @@ body {
     margin-bottom: 60px;
 }
 
+.tiny-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 4px;
+}
+
+
+
 /* ------------------------------------ */
 /*        IMAGE HOVER (SLIDES 1–3)      */
 /* ------------------------------------ */
@@ -207,7 +217,7 @@ body {
 
 
 .test-section {
-    margin-top: 100px; /* Abstand zu den Punkten */
+    margin-top: 200px; /* Abstand zu den Punkten */
     padding-top: 200px;
     padding: 40px 20px;
     background-color: #d9dcde; /* leichtes Grau */
