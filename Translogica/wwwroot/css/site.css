@@ -27,7 +27,7 @@ body {
     max-width: 800px;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    background-color: #f9f9f9;
+    background-color: #FFFFFF;
 }
 
 .base-image,
@@ -58,14 +58,22 @@ body {
 /* ------------------------------------ */
 /*              CAROUSEL                */
 /* ------------------------------------ */
+
+/* Wrapper mit fixer Breite für Carousel */
+.carousel-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Der Inhalt des Carousels */
 .carousel-inner {
     min-height: 520px;
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
     position: relative;
 }
 
+/* Jede Slide mit Abstand */
 .carousel-item {
     padding: 20px 0;
 }
@@ -79,7 +87,7 @@ body {
         margin: 0 auto;
     }
 
-    /* Text unter den Bildern */
+    /* Text unter dem Bild */
     .carousel-item .mt-3 {
         margin-top: 20px;
         max-width: 800px;
@@ -90,14 +98,25 @@ body {
 /* ------------------------------------ */
 /*     CAROUSEL-NAVIGATION (PFEILE)     */
 /* ------------------------------------ */
-
-/* Positioniere die Pfeile seitlich des Bildbereichs */
 .carousel-control-prev,
 .carousel-control-next {
-    width: 5%;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-control-prev {
+    left: -60px;
+}
+
+.carousel-control-next {
+    right: -60px;
 }
 
 .carousel-control-prev-icon,
@@ -107,10 +126,21 @@ body {
     padding: 10px;
 }
 
-/* Punkte-Navigation */
-.carousel-indicators [data-bs-target] {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #1f2e5a;
+/* ------------------------------------ */
+/*         CAROUSEL-INDIKATOREN         */
+/* ------------------------------------ */
+.carousel-indicators {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    margin: 0;
 }
+
+    .carousel-indicators [data-bs-target] {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #1f2e5a;
+    }
