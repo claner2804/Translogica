@@ -16,3 +16,21 @@ html {
 body {
   margin-bottom: 60px;
 }
+/* --- Image Hover Swap --- */
+.hover-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-image {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hover-image-wrapper:hover .hover-image {
+    opacity: 1;
+}
+
+.hover-image-wrapper:hover .base-image {
+    opacity: 0;
+}
