@@ -78,6 +78,34 @@ body {
     padding: 20px 0;
 }
 
+    /* h4 ohne Unterstreichung und eigene Farbe */
+    .carousel-item h4 {
+        color: #1f2e5a !important; /* ersetzt Bootstrap-Blau */
+        text-decoration: none;
+    }
+
+    /* Entfernt die Unterstreichung bei allen Inhalten im Link im Carousel */
+    .carousel-item a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+        /* Sicherstellen, dass auch Hover & Focus nicht unterstreichen */
+        .carousel-item a:hover,
+        .carousel-item a:focus,
+        .carousel-item a:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+    /* p-Tag mit gelber Farbe ohne Unterstreichung */
+    .carousel-item p.text-warning {
+        color: #ffc107 !important; /* gelb */
+        text-decoration: none;
+    }
+
+
     /* Für Slides ohne Hover (z. B. Slide 4) */
     .carousel-item img.img-fluid {
         max-width: 100%;
@@ -93,7 +121,14 @@ body {
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
+
     }
+
+    .carousel-item h4 {
+        color: #1f2e5a; /* oder eine andere Farbe deiner Wahl */
+        text-decoration: none; /* entfernt Unterstreichung */
+    }
+
 
 /* ------------------------------------ */
 /*     CAROUSEL-NAVIGATION (PFEILE)     */
