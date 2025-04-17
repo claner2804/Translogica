@@ -1,5 +1,6 @@
 ﻿html {
     font-size: 14px;
+    scroll-behavior: smooth;
 }
 
 @media (min-width: 768px) {
@@ -54,6 +55,26 @@ body {
 .hover-image-wrapper:hover .base-image {
     opacity: 0;
 }
+
+
+.scroll-btn {
+    margin-top: 30px;
+    padding: 12px 24px;
+    background-color: #1f2e5a;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+    .scroll-btn:hover {
+        background-color: #162044;
+        color: white;
+    }
+
+
+
+
 
 /* ------------------------------------ */
 /*              CAROUSEL                */
