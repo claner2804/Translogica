@@ -1,30 +1,41 @@
 ﻿html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
+
 /* --- Image Hover Swap --- */
 .hover-image-wrapper {
     position: relative;
     overflow: hidden;
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .hover-image {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
 
 .hover-image-wrapper:hover .hover-image {
@@ -35,11 +46,10 @@ body {
     opacity: 0;
 }
 
-
 /* Carousel-Pfeile besser sichtbar und positioniert */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: #1f2e5a; /* deine Markenfarbe */
+    background-color: #1f2e5a;
     border-radius: 50%;
     padding: 10px;
 }
@@ -51,3 +61,46 @@ body {
     border-radius: 50%;
     background-color: #1f2e5a;
 }
+
+
+/* Einheitliche Größe & Zentrierung */
+
+.carousel-inner {
+    min-height: 520px;
+    text-align: center;
+}
+
+.carousel-item {
+    padding: 20px 0;
+}
+
+    .carousel-item .hover-image-wrapper {
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
+    }
+
+    .carousel-item .hover-image,
+    .carousel-item .base-image {
+        width: auto;
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .carousel-item .position-relative {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .carousel-item .mt-3 {
+        margin-top: 20px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
