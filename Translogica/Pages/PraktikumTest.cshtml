@@ -1,0 +1,34 @@
+﻿@page
+@model PraktikumTestModel
+@{
+    ViewData["Title"] = "Selbsttest: Praktikum oder Anrechnung?";
+}
+
+<div class="container mt-5 text-center">
+    <h2 class="mb-4 text-primary">🎓 Selbsttest: Praktikum oder Anrechnung?</h2>
+
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Wie viele Stunden arbeitest du pro Woche bei Translogica?</label>
+            <input type="number" class="form-control w-25 mx-auto" asp-for="StundenProWoche" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Wie lange arbeitest du dort schon (in Wochen)?</label>
+            <input type="number" class="form-control w-25 mx-auto" asp-for="AnzahlWochen" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Wie viel verdienst du voraussichtlich im gesamten Jahr? (€)</label>
+            <input type="number" class="form-control w-25 mx-auto" asp-for="Jahresgehalt" required />
+        </div>
+
+        <button type="submit" class="btn btn-warning">🔍 Auswerten</button>
+    </form>
+
+    @if (Model.Gesamtstunden > 0)
+    {
+        <div class="mt-4 alert @Model.AlertClass">
+            <h4>Ergebnis</h4>
+            <p>@Model.Ergebnis</p>
+        </div>
+    }
+</div>
