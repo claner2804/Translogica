@@ -179,3 +179,50 @@ body {
         border-radius: 50%;
         background-color: #1f2e5a;
     }
+
+/* ------------------------------------ */
+/*         TEST-SECTION         */
+/* ------------------------------------ */
+
+
+.test-section {
+    margin-top: 100px; /* Abstand zu den Punkten */
+    padding-top: 200px;
+    padding: 40px 20px;
+    background-color: #d9dcde; /* leichtes Grau */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .test-section h3 {
+        color: #1f2e5a;
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .test-section p {
+        font-size: 1.1rem;
+        color: #000000;
+        margin-bottom: 20px;
+    }
+
+    .test-section .btn {
+        font-size: 1.2rem;
+        padding: 10px 24px;
+        border-radius: 8px;
+        color: #1f2e5a;
+        background-color: #ffc107;
+        border: none; /* ← entfernt den Rand */
+        box-shadow: none !important; /* ← optional: entfernt auch Focus-Outline */
+    }
+
+        .test-section .btn:hover {
+            background-color: #e0aa06;
+            color: #1f2e5a;
+        }
+
+
