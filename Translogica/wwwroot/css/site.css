@@ -17,25 +17,34 @@ body {
     margin-bottom: 60px;
 }
 
-/* --- Image Hover Swap --- */
+/* ------------------------------------ */
+/*        IMAGE HOVER (SLIDES 1–3)      */
+/* ------------------------------------ */
 .hover-image-wrapper {
     position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: auto;
-    max-width: 800px;
     margin: 0 auto;
-    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.base-image,
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease-in-out;
+    display: block;
 }
 
 .hover-image {
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
+    z-index: 2;
 }
 
 .hover-image-wrapper:hover .hover-image {
@@ -46,7 +55,51 @@ body {
     opacity: 0;
 }
 
-/* Carousel-Pfeile besser sichtbar und positioniert */
+/* ------------------------------------ */
+/*              CAROUSEL                */
+/* ------------------------------------ */
+.carousel-inner {
+    min-height: 520px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-item {
+    padding: 20px 0;
+}
+
+    /* Für Slides ohne Hover (z. B. Slide 4) */
+    .carousel-item img.img-fluid {
+        max-width: 100%;
+        max-height: 400px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Text unter den Bildern */
+    .carousel-item .mt-3 {
+        margin-top: 20px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+/* ------------------------------------ */
+/*     CAROUSEL-NAVIGATION (PFEILE)     */
+/* ------------------------------------ */
+
+/* Positioniere die Pfeile seitlich des Bildbereichs */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: #1f2e5a;
@@ -54,53 +107,10 @@ body {
     padding: 10px;
 }
 
-/* Größe der Punkte unter dem Carousel */
+/* Punkte-Navigation */
 .carousel-indicators [data-bs-target] {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: #1f2e5a;
 }
-
-
-/* Einheitliche Größe & Zentrierung */
-
-.carousel-inner {
-    min-height: 520px;
-    text-align: center;
-}
-
-.carousel-item {
-    padding: 20px 0;
-}
-
-    .carousel-item .hover-image-wrapper {
-        position: relative;
-        max-width: 100%;
-        max-height: 100%;
-        margin: 0 auto;
-    }
-
-    .carousel-item .hover-image,
-    .carousel-item .base-image {
-        width: auto;
-        max-width: 100%;
-        max-height: 100%;
-        height: auto;
-        object-fit: contain;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .carousel-item .position-relative {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
-    .carousel-item .mt-3 {
-        margin-top: 20px;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
