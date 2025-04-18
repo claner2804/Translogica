@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: claudicodes
-    runtime: docker
-    repo: https://github.com/claner2804/Translogica
-    branch: main
-    autoDeploy: true
