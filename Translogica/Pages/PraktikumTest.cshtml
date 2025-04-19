@@ -9,7 +9,7 @@
 
         <!-- Titel -->
         <h2 class="mb-4 text-center fs-3 fw-bold" style="color: #1f2e5a">
-            🎓 Selbsttest: Praktikum oder Anrechnung?
+            🎓 Selbsttest: Praktikum absolvieren oder anrechnen lassen?
         </h2>
 
         <!-- Zwei Bilder nebeneinander -->
@@ -79,6 +79,7 @@
                 <thead class="table-light">
                     <tr style="background-color: #f1f1f1; color: #1f2e5a;">
                         <th style="padding: 12px;">Datum</th>
+                        <th style="padding: 12px;">Name</th>
                         <th style="padding: 12px;">Stunden</th>
                         <th style="padding: 12px;">Ergebnis</th>
                     </tr>
@@ -88,6 +89,7 @@
                     {
                         <tr style="border-bottom: 1px solid #dee2e6;" onmouseover="this.style.backgroundColor='#fdf7e2'" onmouseout="this.style.backgroundColor='white'">
                             <td style="padding: 10px;">@eintrag.Timestamp.ToString("dd.MM.yyyy")</td>
+                            <td style="padding: 10px;">@eintrag.Name</td>
                             <td style="padding: 10px;">@eintrag.Gesamtstunden</td>
                             <td style="padding: 10px;">
                                 @(eintrag.Ergebnistest.Contains("Anrechnung")

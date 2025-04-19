@@ -8,6 +8,8 @@ public class ErgebnisEintrag
     public DateTime Timestamp { get; set; }
     public int Gesamtstunden { get; set; }
     public string Ergebnistest { get; set; }
+
+    public string Name { get; set; }
 }
 
 public class PraktikumTestModel : PageModel
@@ -19,7 +21,7 @@ public class PraktikumTestModel : PageModel
         string connectionString = "Host=gondola.proxy.rlwy.net;Port=57980;Username=postgres;Password=WhVtLzEAnkYeHErdZqigXyIGOxpHBSZg;Database=railway;SSL Mode=Require;Trust Server Certificate=true";
 
         string query = @"
-    SELECT timestamp, gesamtstunden, ergebnistest
+    SELECT timestamp, gesamtstunden, ergebnistest,name
     FROM ergebnisse
     ORDER BY timestamp DESC
     LIMIT 5;";
@@ -38,7 +40,8 @@ public class PraktikumTestModel : PageModel
                 {
                     Timestamp = reader.GetDateTime(0),
                     Gesamtstunden = reader.GetInt32(1),
-                    Ergebnistest = reader.GetString(2)
+                    Ergebnistest = reader.GetString(2),
+                    Name = reader.GetString(3),
                 });
             }
         }
