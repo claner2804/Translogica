@@ -112,7 +112,74 @@
 <div style="height: 80px;"></div> <!-- Abstandshalter -->
 
 <div class="test-section text-center">
-  <h3>Pflichtpraktikum bei Translogica absolvieren anstatt anrechnen lassen – macht das Sinn?</h3>
-  <p>Mache jetzt den Test!</p>
-  <a href="/PraktikumTest" class="btn">Test starten</a>
+    <h3>Pflichtpraktikum bei Translogica absolvieren anstatt anrechnen lassen – macht das Sinn?</h3>
+    <p>Mache jetzt den Test!</p>
+    <a href="/PraktikumTest" class="btn">Test starten</a>
 </div>
+
+
+@* 
+<!-- Startpunkt für den LKW -->
+<div id="lkwStart" style="height: 1px;"></div>
+
+<!-- LKW Container -->
+<div style="position: relative; height: 100px; margin-top: 0px;">
+    <img id="scroll-lkw" src="/images/lkw.png" alt="LKW"
+         style="width: 220px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+                transition: transform 0.2s ease-out;" />
+</div>
+
+<!-- Weiterer Scrollbereich -->
+<div style="height: 1000px; background-color: white;"></div>
+
+
+<div style="text-align: center; margin-top: 40px;">
+    <p style="color: #1f2e5a; font-weight: 500; margin-bottom: 10px;">
+        Lieferung erfolgreich zugestellt – bitte Fracht­dokumente unterschreiben 📦🖊️
+    </p>
+    <a href="/Conclusion"
+       style="display: inline-block;
+              background-color: #e0f0ff;
+              color: #1f2e5a;
+              font-weight: bold;
+              padding: 10px 20px;
+              border-radius: 8px;
+              text-decoration: none;
+              box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+              transition: background-color 0.2s;">
+        Jetzt einsehen
+    </a>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const lkw = document.getElementById("scroll-lkw");
+        const container = lkw.parentElement;
+        const maxMove = 300; // Maximale Bewegung in px
+
+        window.addEventListener("scroll", () => {
+            if (!lkw) return;
+
+            const rect = container.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+
+            // Nur starten, wenn Container sichtbar ist
+            if (rect.top < viewportHeight && rect.bottom > 0) {
+                // Berechne, wie viel Prozent des Containers im Viewport ist
+                const visibleRatio = 1 - Math.max(0, rect.top) / viewportHeight;
+                const moveY = visibleRatio * maxMove;
+
+                lkw.style.transform = `translate(-50%, ${moveY}px)`;
+            } else {
+                // Zurücksetzen wenn nicht im Viewport
+                lkw.style.transform = `translate(-50%, 0)`;
+            }
+        });
+    });
+
+</script> *@

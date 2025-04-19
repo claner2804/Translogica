@@ -323,3 +323,16 @@ body {
     max-width: 500px;
     margin: 0 auto;
 }
+
+
+/*LKW*/
+/*
+#scroll-lkw {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    transition: transform 0.2s ease-out;
+}
+    */
+
