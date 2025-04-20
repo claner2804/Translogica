@@ -37,15 +37,15 @@ namespace Translogica.Pages
             string result;
             if (totalHours >= 500 && Input.UsesTools && Input.HasStipendium)
             {
-                result = $"{Input.Name}, du hast {totalHours} Stunden gesammelt (über 500), verwendest relevante Tools und liegst an der Zuverdienstgrenze. ---> Eine Anrechnung des Pflichtpraktikums ist sinnvoll.";
+                result = $"{Input.Name}, du hast {totalHours} Stunden gesammelt (mehr als 500), verwendest relevante Tools und liegst an der Zuverdienstgrenze. ---> Eine Anrechnung des Pflichtpraktikums ist sinnvoll.";
             }
             else if (totalHours >= 500 && Input.UsesTools)
             {
-                result = $"{Input.Name}, du hast {totalHours} Stunden gesammelt (über 500) und verwendest bereits relevante Tools. ---> Eine Anrechnung des Pflichtpraktikums ist sinnvoll.";
+                result = $"{Input.Name}, du hast {totalHours} Stunden gesammelt (mehr als 500) und verwendest bereits relevante Tools. ---> Eine Anrechnung des Pflichtpraktikums ist sinnvoll.";
             }
             else if (totalHours >= 500)
             {
-                result = $"{Input.Name}, du hast {totalHours} Stunden gesammelt (über 500), aber du verwendest keine relevanten Tools. ---> Eine Absolvierung des Pflichtpraktikums ist sinnvoll.";
+                result = $"{Input.Name}, du hast {totalHours} Stunden gesammelt (mehr als 500), aber du verwendest keine relevanten Tools. ---> Eine Absolvierung des Pflichtpraktikums ist sinnvoll.";
             }
             else
             {
