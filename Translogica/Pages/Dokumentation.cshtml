@@ -1,0 +1,70 @@
+﻿@page "/Dokumentation"
+@model Translogica.Pages.DokumentationModel
+
+
+@{
+    ViewData["Title"] = "Dokumentation";
+}
+
+<div class="container py-5 px-3" style="font-family: sans-serif; max-width: 900px; margin: 0 auto;">
+    <h1 class="mb-4 fw-bold text-primary" style="font-size: 2.5rem; color: #1f2e5a;">📄 Projekt-Dokumentation</h1>
+
+    <p class="lead mb-4">Hier findest du alle Schritte, wie meine selbstgebaute Praktikums-Selbsttest-Anwendung entstanden ist – von der Idee bis zur Website und Desktop-Version mit Datenbankanbindung.</p>
+
+    <hr>
+
+    <h3 class="fw-semibold text-primary mt-5">1. Idee & Zielsetzung</h3>
+    <p>Weil ich schon seit einiger Zeit bei Translogica arbeite, habe ich mir viele praxisnahe Skills angeeignet – genug, um mir das im Studium vorgesehene Pflichtpraktikum guten Gewissens anrechnen zu lassen.
+Gleichzeitig wollte ich mein Vorhaben, in ein Entwicklerteam zu wechseln untermauern und meine technischen Fähigkeiten unter Beweis stellen – mit einem kleinen, selbstgebauten Tool, das spielerisch, aber informativ aufzeigt, dass ich für den nächsten Schritt bereit bin. Ziel war eine Anwendung, die sowohl als Desktop-Version als auch über meine Website läuft – inklusive Datenbankanbindung.
+</p>
+
+    <h3 class="fw-semibold text-primary mt-4">2. Technologie-Stack</h3>
+    <ul>
+        <li><strong>C# / .NET (WPF):</strong> Für die Desktop-Version des Selbsttests</li>
+        <li><strong>ASP.NET Razor Pages:</strong> Um dieselbe Logik in einer Webanwendung verfügbar zu machen</li>
+        <li><strong>PostgreSQL:</strong> Zentrale Datenbank, gehostet über Railway</li>
+        <li><strong>Render:</strong> Kostenloses Hosting für meine ClaudiCodes-Website</li>
+        <li><strong>CSS & HTML:</strong> Für Layout und Design im Stil von Translogica</li>
+        <li><strong>GitHub:</strong> Versionsverwaltung</li>
+
+
+    </ul>
+
+    <h3 class="fw-semibold text-primary mt-4">3. Umsetzungsschritte</h3>
+
+    <ul style="list-style: disc; padding-left: 1.2rem;">
+        <li><strong>Desktop-Anwendung (WinForms, C#):</strong><br>
+            Ich habe zunächst eine eigenständige Desktop-App mit WinForms entwickelt. Dabei lag der Fokus auf einer benutzerfreundlichen Oberfläche und einer sauberen Eingabevalidierung. Die Kernlogik prüft anhand der angegebenen Arbeitszeit, Tools und Stipendium, ob eine Anrechnung des Pflichtpraktikums sinnvoll ist. Die berechneten Ergebnisse werden automatisch in eine <strong>Cloud-Datenbank (PostgreSQL auf Railway)</strong> geschrieben – inklusive Zeitstempel und allen Parametern.
+        </li>
+
+        <li class="mt-3"><strong>Veröffentlichung (Self-contained Build):</strong><br>
+            Um die Anwendung einfach auf jedem Windows-Rechner starten zu können (auch ohne .NET-Installation), habe ich die App als <strong>self-contained .exe</strong> mit <code>dotnet publish</code> bereitgestellt. Die Datei kann direkt ausgeführt werden und enthält bereits alle benötigten Laufzeitkomponenten.
+        </li>
+
+        <li class="mt-3"><strong>Web-Version (ASP.NET Razor Pages):</strong><br>
+            Die Logik der Desktop-App habe ich anschließend nahezu 1:1 in die Webanwendung übertragen – mit <strong>Razor Pages</strong> als Framework. Auch hier werden die Eingaben geprüft, ausgewertet und in dieselbe Datenbank geschrieben. Die Website läuft auf <strong>Render.com</strong>, wodurch sie weltweit erreichbar ist.
+        </li>
+
+        <li class="mt-3"><strong>Live-Datenanzeige (Datenbank-Abfrage):</strong><br>
+            Auf der Website wird eine kleine Tabelle angezeigt, die die <strong>letzten fünf gespeicherten Einträge</strong> direkt aus der PostgreSQL-Datenbank ausliest. Dabei wird nur ein gekürzter Ergebnistext angezeigt – als schöner, nachvollziehbarer Beweis, dass wirklich etwas gespeichert wird :-). Die Datenbankabfrage habe ich mit <code>Npgsql</code> (C#-Library für PostgreSQL) direkt ins Razor Page Model integriert.
+        </li>
+
+        <li class="mt-3"><strong>Design (inspiriert von Translogica):</strong><br>
+            Bei Farben, Buttons und Schriftarten habe ich mich am <strong>Design von Translogica</strong> orientiert.
+        </li>
+
+        <li class="mt-3"><strong>Special Feature:</strong><br>
+            Mit dem Button „Okay cooles Projekt… aber wofür das alles?“ geht’s weiter zum letzten Teil. Dort erkläre ich kurz, was ich mit dem Projekt eigentlich erreichen möchte.
+        </li>
+    </ul>
+
+<h3 class="fw-semibold text-primary mt-4">4. Herausforderungen</h3>
+<ul>
+    <li>Die Desktop-Version (.exe) schreibt ihre Ergebnisse direkt in die Railway-Datenbank – das klappt zuhause problemlos. Am Firmenrechner geht’s leider nicht, weil Port 57980 gesperrt ist (Netzwerksicherheit). Die Online-Version ist davon nicht betroffen, der Zugriff erfolgt vom Server (Render) aus, nicht vom Firmennetzwerk.</li>
+    <li>Das Design – vor allem die Positionierung der Checklisten-Icons - hat etwas Geduld erfordert.</li>
+    <li>Auf Render dauert das Nachladen aus der Datenbank manchmal etwas. Ein kleiner Hinweistext weist darauf hin.</li>
+</ul>
+
+    <h3 class="fw-semibold text-primary mt-4">5. Fazit</h3>
+    <p>Ich konnte viele Technologien verbinden, eine durchgängige Anwendung bauen und habe beim Umsetzen einer realen Idee vieles über Webentwicklung, Datenbanken und das Hosting gelernt. Und ja – <strong>ich habe alles selbst gebaut.</strong> 🎉</p>
+</div>
