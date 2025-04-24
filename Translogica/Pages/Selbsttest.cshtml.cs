@@ -24,7 +24,7 @@ namespace Translogica.Pages
 
         public void OnGet()
         {
-            Input = new InputModel(); // für erste Initialisierung
+            Input = new InputModel(); // fï¿½r erste Initialisierung
         }
 
         public IActionResult OnPost()
@@ -49,7 +49,7 @@ namespace Translogica.Pages
             }
             else
             {
-                result = $"{Input.Name}, du hast nur {totalHours} Stunden gesammelt – für eine Anrechnung brauchst du mindestens 500.";
+                result = $"{Input.Name}, du hast nur {totalHours} Stunden gesammelt. Du brauchst mindestens 500.  ---> Eine Absolvierung des Pflichtpraktikums ist sinnvoll. ";
             }
 
             ErgebnisText = result;
