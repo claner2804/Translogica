@@ -342,7 +342,7 @@ body {
         position: relative;
         padding-left: 50px; /* Weniger Platz für kleinere Icons */
         margin-bottom: 12px;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.4;
         color: #000;
     }
@@ -381,3 +381,11 @@ body {
     color: #1f2e5a !important;
 }
 
+.checklist-paragraph {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #000;
+    font-weight: 400;
+    word-break: break-word;
+    padding-left: 0; /* optional, falls kein Icon */
+}
