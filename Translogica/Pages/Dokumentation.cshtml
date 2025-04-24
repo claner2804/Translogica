@@ -1,87 +1,58 @@
 ﻿@page "/Dokumentation"
 @model Translogica.Pages.DokumentationModel
 
-
 @{
     ViewData["Title"] = "Dokumentation";
 }
 
-<div class="container py-5 px-3" style="font-family: sans-serif; max-width: 900px; margin: 0 auto;">
-    <h1 class="mb-4 fw-bold text-primary" style="font-size: 2.5rem; color: #1f2e5a;">📄 Projekt-Dokumentation</h1>
+<div class="container" style="font-family: sans-serif; max-width: 900px; margin: 0 auto; padding: 40px 20px;">
+    <h1 class="fw-bold text-primary" style="font-size: 2.5rem; color: #1f2e5a; margin-bottom: 1.5rem;">📄 Projekt-Dokumentation</h1>
 
-    <p class="lead mb-4">Hier findest du alle Schritte, wie meine selbstgebaute Praktikums-Selbsttest-Anwendung entstanden ist – von der Idee bis zur Website und Desktop-Version mit Datenbankanbindung.</p>
+    <p class="lead" style="margin-bottom: 1.5rem;">Hier findest du alle Schritte, wie meine selbstgebaute Praktikums-Selbsttest-Anwendung entstanden ist – von der Idee bis zur Website und Desktop-Version mit Datenbankanbindung.</p>
 
     <hr>
 
-    <h3 class="fw-semibold text-primary mt-5">1. Idee & Zielsetzung</h3>
-    <p>Weil ich schon seit einiger Zeit bei Translogica arbeite, habe ich mir viele praxisnahe Skills angeeignet – genug, um mir das im Studium vorgesehene Pflichtpraktikum guten Gewissens anrechnen zu lassen.
-Gleichzeitig wollte ich mein Vorhaben, in ein Entwicklerteam zu wechseln untermauern und meine technischen Fähigkeiten unter Beweis stellen – mit einem kleinen, selbstgebauten Tool, das spielerisch, aber informativ aufzeigt, dass ich für den nächsten Schritt bereit bin. Ziel war eine Anwendung, die sowohl als Desktop-Version als auch über meine Website läuft – inklusive Datenbankanbindung.
-</p>
+    <h3 class="fw-semibold text-primary mt-4">1. Idee & Zielsetzung</h3>
+    <p style="margin-bottom: 1.2rem;">Weil ich schon seit einiger Zeit bei Translogica arbeite, habe ich mir viele praxisnahe Skills angeeignet – genug, um mir das im Studium vorgesehene Pflichtpraktikum guten Gewissens anrechnen zu lassen. Gleichzeitig wollte ich mein Vorhaben, in ein Entwicklerteam zu wechseln untermauern und meine technischen Fähigkeiten unter Beweis stellen – mit einem kleinen, selbstgebauten Tool, das spielerisch, aber informativ aufzeigt, dass ich für den nächsten Schritt bereit bin. Ziel war eine Anwendung, die sowohl als Desktop-Version als auch über meine Website läuft – inklusive Datenbankanbindung.</p>
 
     <h3 class="fw-semibold text-primary mt-4">2. Technologie-Stack</h3>
-    <ul>
+    <ul class="checklist">
         <li><strong>C# / .NET (WPF):</strong> Für die Desktop-Version des Selbsttests</li>
         <li><strong>ASP.NET Razor Pages:</strong> Um dieselbe Logik in einer Webanwendung verfügbar zu machen</li>
         <li><strong>PostgreSQL:</strong> Zentrale Datenbank, gehostet über Railway</li>
         <li><strong>Render:</strong> Kostenloses Hosting für meine ClaudiCodes-Website</li>
         <li><strong>CSS & HTML:</strong> Für Layout und Design im Stil von Translogica</li>
         <li><strong>GitHub:</strong> Versionsverwaltung</li>
-
-
     </ul>
 
     <h3 class="fw-semibold text-primary mt-4">3. Umsetzungsschritte</h3>
-
-    <ul style="list-style: disc; padding-left: 1.2rem;">
-        <li><strong>Desktop-Anwendung (WinForms, C#):</strong><br>
-            Ich habe zunächst eine eigenständige Desktop-App mit WinForms entwickelt. Dabei lag der Fokus auf einer benutzerfreundlichen Oberfläche und einer sauberen Eingabevalidierung. Die Kernlogik prüft anhand der angegebenen Arbeitszeit, Tools und Stipendium, ob eine Anrechnung des Pflichtpraktikums sinnvoll ist. Die berechneten Ergebnisse werden automatisch in eine <strong>Cloud-Datenbank (PostgreSQL auf Railway)</strong> geschrieben – inklusive Zeitstempel und allen Parametern.
-        </li>
-
-        <li class="mt-3"><strong>Veröffentlichung (Self-contained Build):</strong><br>
-            Um die Anwendung einfach auf jedem Windows-Rechner starten zu können (auch ohne .NET-Installation), habe ich die App als <strong>self-contained .exe</strong> mit <code>dotnet publish</code> bereitgestellt. Die Datei kann direkt ausgeführt werden und enthält bereits alle benötigten Laufzeitkomponenten.
-        </li>
-
-        <li class="mt-3"><strong>Web-Version (ASP.NET Razor Pages):</strong><br>
-            Die Logik der Desktop-App habe ich anschließend nahezu 1:1 in die Webanwendung übertragen – mit <strong>Razor Pages</strong> als Framework. Auch hier werden die Eingaben geprüft, ausgewertet und in dieselbe Datenbank geschrieben. Die Website läuft auf <strong>Render.com</strong>, wodurch sie weltweit erreichbar ist.
-        </li>
-
-        <li class="mt-3"><strong>Live-Datenanzeige (Datenbank-Abfrage):</strong><br>
-            Auf der Website wird eine kleine Tabelle angezeigt, die die <strong>letzten fünf gespeicherten Einträge</strong> direkt aus der PostgreSQL-Datenbank ausliest. Dabei wird nur ein gekürzter Ergebnistext angezeigt – als schöner, nachvollziehbarer Beweis, dass wirklich etwas gespeichert wird :-). Die Datenbankabfrage habe ich mit <code>Npgsql</code> (C#-Library für PostgreSQL) direkt ins Razor Page Model integriert.
-        </li>
-
-        <li class="mt-3"><strong>Design (inspiriert von Translogica):</strong><br>
-            Bei Farben, Buttons und Schriftarten habe ich mich am <strong>Design von Translogica</strong> orientiert.
-        </li>
-
-        <li class="mt-3"><strong>Special Feature:</strong><br>
-            Mit dem Button „Okay cooles Projekt… aber wofür das alles?“ geht’s weiter zum letzten Teil. Dort erkläre ich kurz, was ich mit dem Projekt eigentlich erreichen möchte.
-        </li>
+    <ul class="checklist">
+        <li><strong>Desktop-Anwendung (WinForms, C#):</strong> Entwicklung einer Desktop-App mit Validierung und Speicherung der Ergebnisse in PostgreSQL (Railway).</li>
+        <li><strong>Veröffentlichung (Self-contained Build):</strong> Bereitstellung als eigenständige .exe mit <code>dotnet publish</code>.</li>
+        <li><strong>Web-Version (ASP.NET Razor Pages):</strong> Übertragung der Logik in eine Webanwendung mit direkter Datenbankspeicherung.</li>
+        <li><strong>Live-Datenanzeige:</strong> Ausgabe der letzten 5 anonymisierten Einträge direkt aus der Cloud-Datenbank via <code>Npgsql</code>.</li>
+        <li><strong>Design:</strong> Anlehnung an Farben und Stil der Translogica-Website.</li>
+        <li><strong>Special Feature:</strong> Mit dem Button „Okay cooles Projekt… aber wofür das alles?“ geht’s weiter zur Conclusion.</li>
     </ul>
 
-<h3 class="fw-semibold text-primary mt-4">4. Herausforderungen</h3>
-<ul>
-    <li>Die Desktop-Version (.exe) schreibt ihre Ergebnisse direkt in die Railway-Datenbank – das klappt zuhause problemlos. Am Firmenrechner geht’s leider nicht, weil Port 57980 gesperrt ist (Netzwerksicherheit). Die Online-Version ist davon nicht betroffen, der Zugriff erfolgt vom Server (Render) aus, nicht vom Firmennetzwerk.</li>
-    <li>Das Design – vor allem die Positionierung der Checklisten-Icons - hat etwas Geduld erfordert.</li>
-    <li>Auf Render dauert das Nachladen aus der Datenbank manchmal etwas. Ein kleiner Hinweistext weist darauf hin.</li>
-</ul>
+    <h3 class="fw-semibold text-primary mt-4">4. Herausforderungen</h3>
+    <ul class="checklist">
+        <li>Die Desktop-Version funktioniert nicht im Firmennetzwerk wegen gesperrtem Port 57980 – online aber kein Problem, da der Server (Render) mit der Datenbank spricht.</li>
+        <li>Das Positionieren der Icons in der Checkliste hat etwas Feinarbeit gebraucht.</li>
+        <li>Die Ladezeit auf Render ist manchmal etwas träge – das wurde mit einem Hinweistext kompensiert.</li>
+    </ul>
 
     <h3 class="fw-semibold text-primary mt-4">5. Fazit</h3>
-    <p>
-        Ich konnte viele gelernte Technologien sinnvoll miteinander verbinden, eine durchgängige Anwendung entwickeln und dabei echte Praxiserfahrung mit Webentwicklung, Datenbanken und Hosting sammeln.
+    <p style="margin-bottom: 1.2rem;">Ich konnte viele gelernte Technologien sinnvoll miteinander verbinden, eine durchgängige Anwendung entwickeln und dabei echte Praxiserfahrung mit Webentwicklung, Datenbanken und Hosting sammeln.</p>
+    <p style="margin-bottom: 1.2rem;">Ich bin mit dem Ergebnis richtig zufrieden: Es ist persönlich, technisch solide und zeigt, was mir wichtig ist.</p>
+    <p style="margin-bottom: 1.2rem;">Der nächste Schritt?</p>
 
-Ich bin mit dem Ergebnis richtig zufrieden: Es ist persönlich, technisch solide und zeigt, was mir wichtig ist.
-        </p>
-     <p>
-Der nächste schritt?
-    </p>
-
-
-    <!-- Wofür button -->
-<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:sans-serif; margin-top: 10px; margin-bottom: 60px;">
-    <a href="/#checklistStart" class="scroll-btn">
-        Okay cooles Projekt… aber wofür das alles?
-    </a>
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:sans-serif; margin-top: 10px; margin-bottom: 40px;">
+        <a href="/Fazit" class="scroll-btn">
+            Okay cooles Projekt… aber wofür das alles?
+        </a>
+    </div>
 </div>
 
-
-</div>
+<style>
+</style>
